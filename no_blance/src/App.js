@@ -14,7 +14,7 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 import Gallery from './pages/Gallery';
 import Footer from './components/Footer';
 import WhatsAppFAB from './components/WhatsAppFAB';
-import ScrollToTop from './components/ScrollToTop';
+
 import StickyBottomBar from './components/StickyBottomBar';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions';
@@ -73,7 +73,7 @@ function App() {
         </Routes>
         <Footer />
         <WhatsAppFAB />
-        <ScrollToTop />
+        
         <StickyBottomBar />
       </div>
     </Router>
