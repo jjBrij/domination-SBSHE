@@ -284,7 +284,7 @@ const CoursesPage = () => {
                     href="mailto:skps.org@gmail.com"
                     className="flex-1 bg-spotify-mid text-white font-bold py-3 rounded-full text-center hover:bg-spotify-mid/80 transition flex items-center justify-center gap-2"
                   >
-                    ✉️ Email: skps.org@gmail.com
+                    ✉️ Email: patelcollegeprofessionnaleducation@gmail.com
                   </a>
 
                   <a

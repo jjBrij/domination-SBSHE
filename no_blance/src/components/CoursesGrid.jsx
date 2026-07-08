@@ -1,6 +1,8 @@
-// src/components/CoursesGrid.jsx
-import React from 'react';
 
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { useEffect } from 'react';
 const CoursesGrid = () => {
   const domains = [
     { icon: "💻", title: "IT & Software", desc: "Web Designing, Advanced Excel, Diploma in Information Technology (DIT) & more", color: "bg-spotify-green/10" },
@@ -10,6 +12,36 @@ const CoursesGrid = () => {
 
     { icon: "🏛️", title: "Yoga & Naturopathy", desc: "Diploma in Naturopathy & Yogic Sciences (DNYS)", color: "bg-spotify-green/10" }
   ];
+  // Set up Intersection Observer for this component
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      // Manually trigger reveal animations for elements already in view
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 100);
+
+    // Set up observer for future scrolls
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Observe all .reveal elements
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="bg-spotify-black py-20">
@@ -28,9 +60,9 @@ const CoursesGrid = () => {
               </div>
               <h3 className="text-lg font-spotify-title font-bold text-white">{d.title}</h3>
               <p className="text-spotify-silver text-sm font-spotify mt-2">{d.desc}</p>
-              <a href="http://localhost:3000/courses" className="text-spotify-green text-sm font-bold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-button">
+              <Link to="/courses" className="text-spotify-green text-sm font-bold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-button">
                 Know More →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

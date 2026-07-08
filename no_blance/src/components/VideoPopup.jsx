@@ -11,7 +11,7 @@ const VideoPopup = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('VideoPopup: Timer triggered - opening popup');
+     
       if (!hasBeenOpened) {
         setIsOpen(true);
         setHasBeenOpened(true);
@@ -24,7 +24,7 @@ const VideoPopup = () => {
   }, [hasBeenOpened]);
 
   const closePopup = () => {
-    console.log('VideoPopup: Closing popup');
+    
     setIsOpen(false);
     const video = document.querySelector('.popup-video');
     if (video) {
@@ -80,7 +80,9 @@ const VideoPopup = () => {
               setIsPlaying(true);
             })
             .catch((err) => {
-              console.log('Auto-play prevented:', err);
+             
+
+              
               setIsPlaying(false);
             });
         }

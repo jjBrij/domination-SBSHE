@@ -7,9 +7,7 @@ const StickyBottomBar = () => {
       <span className="text-white text-sm font-bold flex items-center gap-2 uppercase tracking-button">
         📞 Free Counselling
       </span>
-      <button className="bg-spotify-green text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-spotify-green-dark transition flex items-center gap-2 uppercase tracking-button">
-        💬 Call Now
-      </button>
+      
     </div>
   );
 };

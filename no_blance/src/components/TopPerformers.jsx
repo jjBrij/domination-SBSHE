@@ -1,25 +1,58 @@
-
-import React from 'react';
+// src/components/TopPerformers.jsx
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 const TopPerformers = () => {
   const performers = [
-    { name: "Aarav Sharma",  course: "IT", badge: "IT Batch 2024" },
+    { name: "Aarav Sharma", course: "IT", badge: "IT Batch 2024" },
     { name: "Meena Reddy", placement: "Agri-Startup", course: "Agriculture", badge: "Agri Topper" },
-    { name: "Rohit Kumar", course: "Para-medical" },
-    { name: "Sneha Patel", course: "Medical Laboratory Technician (MLT)", badge: "paramedical Science " },
+    { name: "Rohit Kumar", course: "Para-medical", badge: "Medical Sciences" },
+    { name: "Sneha Patel", course: "Medical Laboratory Technician (MLT)", badge: "Paramedical Science" },
     { name: "Priya Singh", placement: "ICAR", course: "Agriculture", badge: "Research Scholar" }
   ];
 
+  // Set up Intersection Observer for this component
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      // Manually trigger reveal animations for elements already in view
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 100);
+
+    // Set up observer for future scrolls
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Observe all .reveal elements
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="bg-brand-dark py-16 border-t border-brand-border">
+    <section className="bg-spotify-black py-20 border-t border-spotify-border">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-poppins font-bold text-white text-center">
+        <h2 className="text-3xl md:text-5xl font-spotify-title font-bold text-white text-center">
           Top Performers
         </h2>
-        <p className="text-brand-muted text-center mt-4 font-inter">Our students making waves across industries</p>
+        <p className="text-spotify-silver text-center mt-4 font-spotify">
+          Our students making waves across industries
+        </p>
         <div className="mt-10">
           <Swiper
             modules={[Autoplay]}
@@ -36,14 +69,24 @@ const TopPerformers = () => {
           >
             {performers.map((p, i) => (
               <SwiperSlide key={i}>
-                <div className="bg-brand-card p-6 rounded-xl border border-brand-border reveal h-full">
+                <div className="bg-spotify-dark p-6 rounded-spotify-card border border-spotify-border card-spotify reveal h-full">
                   <div className="text-6xl mb-3 text-center">👤</div>
-                  <h4 className="font-poppins text-white font-semibold text-center">{p.name}</h4>
-                  <p className="text-brand-accent text-sm text-center">{p.placement}</p>
-                  <p className="text-brand-muted text-xs text-center mt-1">{p.course}</p>
-                  <span className="inline-block bg-brand-accent/20 text-brand-accent text-xs px-3 py-1 rounded-full mt-3 w-full text-center">
-                    {p.badge}
-                  </span>
+                  <h4 className="font-spotify-title text-white font-bold text-center text-lg">
+                    {p.name}
+                  </h4>
+                  {p.placement && (
+                    <p className="text-spotify-green text-sm text-center font-bold">
+                      {p.placement}
+                    </p>
+                  )}
+                  <p className="text-spotify-silver text-xs text-center mt-1 font-spotify">
+                    {p.course}
+                  </p>
+                  {p.badge && (
+                    <span className="inline-block bg-spotify-green/20 text-spotify-green text-xs font-bold px-3 py-1 rounded-full mt-3 w-full text-center">
+                      {p.badge}
+                    </span>
+                  )}
                 </div>
               </SwiperSlide>
             ))}
