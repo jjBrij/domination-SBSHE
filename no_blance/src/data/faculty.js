@@ -12,7 +12,7 @@ export const facultyData = [
     specialization: "IT & Analytics",
     experience: "2 years",
     qualification: "MCA",
-    bio: "Ex-Google engineer specializing in data science and cloud"
+    bio: " engineer specializing in data science and cloud"
   },
   {
     name: "Ms. Priya Nair",

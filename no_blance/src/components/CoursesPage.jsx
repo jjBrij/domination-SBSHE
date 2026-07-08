@@ -1,13 +1,53 @@
 // src/components/CoursesPage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaSearch, FaChevronDown, FaChevronUp, FaGraduationCap, FaClock, FaUserGraduate, FaRupeeSign, FaExternalLinkAlt } from 'react-icons/fa';
+import {
+  FaArrowLeft, FaSearch, FaChevronDown, FaChevronUp,
+  FaGraduationCap, FaClock, FaUserGraduate, FaRupeeSign,
+  FaExternalLinkAlt
+} from 'react-icons/fa';
 import { departments } from '../data/coursesData';
 
 const CoursesPage = () => {
   const [expandedDept, setExpandedDept] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Force content to show on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+
+      // Manually trigger reveal animations
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Set up Intersection Observer for scroll reveals
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [isLoaded]);
 
   const toggleDepartment = (deptId) => {
     setExpandedDept(expandedDept === deptId ? null : deptId);
@@ -15,7 +55,6 @@ const CoursesPage = () => {
 
   const handleAdmission = (course) => {
     setSelectedCourse(course);
-    // Scroll to admission section
     setTimeout(() => {
       document.getElementById('admission-section')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -31,68 +70,84 @@ const CoursesPage = () => {
   })).filter(dept => dept.courses.length > 0);
 
   return (
-    <div className="bg-spotify-black min-h-screen font-spotify">
-      {/* Utility Bar */}
-      <div className="bg-spotify-mid h-9 hidden md:flex items-center justify-end px-8 gap-6 border-b border-spotify-border">
-        <a href="#" className="text-spotify-silver text-xs font-bold hover:text-white transition uppercase tracking-wider">Find a Store</a>
-        <a href="#" className="text-spotify-silver text-xs font-bold hover:text-white transition uppercase tracking-wider">Help</a>
-        <a href="#" className="text-spotify-silver text-xs font-bold hover:text-white transition uppercase tracking-wider">Join Us</a>
-        <a href="#" className="text-spotify-silver text-xs font-bold hover:text-white transition uppercase tracking-wider">Sign In</a>
-      </div>
-
-      {/* Navigation Bar */}
-      <div className="bg-spotify-black/95 backdrop-blur border-b border-spotify-border sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link to="/" className="inline-flex items-center gap-3 text-spotify-white hover:text-spotify-green transition font-spotify text-sm group">
-            <div className="w-8 h-8 bg-spotify-green rounded-circle flex items-center justify-center group-hover:scale-105 transition">
-              <FaArrowLeft size={14} className="text-black" />
-            </div>
-            <span className="font-bold">Back to Home</span>
-          </Link>
-          
-          <div className="flex items-center gap-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search courses..."
-                className="bg-spotify-mid text-white rounded-pill py-2 px-4 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-spotify-green w-40 md:w-60"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-spotify-silver text-xs" />
+    <div className="bg-spotify-black min-h-screen font-spotify pt-20 md:pt-24">
+      {/* Courses Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        {/* Header */}
+        <div className="border-b border-spotify-border pb-8 mb-8 flex flex-col md:flex-row justify-between items-start gap-6">
+          {/* Left Side: Title and Stats */}
+          <div className="flex-1">
+            <h1 className="font-spotify-title text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-[0.9] tracking-tight">
+              Our
+              <br />
+              <span className="text-spotify-green">Courses</span>
+            </h1>
+            <p className="text-spotify-silver text-sm md:text-base mt-4 max-w-2xl">
+              Explore our comprehensive range of courses across multiple departments.
+              Find the perfect program to launch your career.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="bg-spotify-green/10 text-spotify-green text-xs px-3 py-1 rounded-full border border-spotify-green/30">
+                {departments.length} Departments
+              </span>
+              <span className="bg-spotify-mid text-spotify-silver text-xs px-3 py-1 rounded-full border border-spotify-border">
+                {departments.reduce((acc, dept) => acc + dept.courses.length, 0)} Courses
+              </span>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Courses Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Header */}
-        <div className="border-b border-spotify-border pb-8 mb-8">
-          <h1 className="font-spotify-title text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-[0.9] tracking-tight">
-            Our
-            <br />
-            <span className="text-spotify-green">Courses</span>
-          </h1>
-          <p className="text-spotify-silver text-sm md:text-base mt-4 max-w-2xl">
-            Explore our comprehensive range of courses across multiple departments. 
-            Find the perfect program to launch your career.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="bg-spotify-green/10 text-spotify-green text-xs px-3 py-1 rounded-full border border-spotify-green/30">
-              {departments.length} Departments
-            </span>
-            <span className="bg-spotify-mid text-spotify-silver text-xs px-3 py-1 rounded-full border border-spotify-border">
-              {departments.reduce((acc, dept) => acc + dept.courses.length, 0)} Courses
-            </span>
+
+         <div className="mt-6 flex justify-center">
+  <a
+    href="https://shaheedbhagatsinghhealthandeducation.com/student-register"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative inline-block p-[2px] rounded-full"
+    style={{
+      background: 'conic-gradient(from 0deg, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent)',
+      animation: 'wobble 3s ease-in-out infinite',
+    }}
+  >
+    {/* Corner Stars */}
+    <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite'}}>⭐</span>
+    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 0.75s'}}>⭐</span>
+    <span className="absolute top-1/2 -left-2 -translate-y-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 0.5s'}}>✦</span>
+    <span className="absolute top-1/2 -right-2 -translate-y-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 1s'}}>✦</span>
+
+    {/* Button */}
+    <div className="relative bg-spotify-green text-black font-extrabold text-sm md:text-base px-6 py-3 rounded-full shadow-[0_0_25px_rgba(29,185,84,0.6)] hover:scale-110 transition-transform duration-300 overflow-hidden cursor-pointer">
+      <div 
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+      ></div>
+      <span className="relative flex items-center gap-2 whitespace-nowrap">
+        <span className="text-base group-hover:animate-bounce">⭐</span>
+        <span>Admission Open</span>
+        <span className="text-base group-hover:animate-bounce" style={{animationDelay: '0.5s'}}>⭐</span>
+      </span>
+    </div>
+  </a>
+</div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="mb-8">
+          <div className="relative max-w-md">
+            <input
+              type="text"
+              placeholder="Search courses..."
+              className="w-full bg-spotify-mid text-white rounded-pill py-3 px-4 pl-12 text-sm focus:outline-none focus:ring-2 focus:ring-spotify-green border border-spotify-border"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-spotify-silver text-sm" />
           </div>
         </div>
 
         {/* Departments Accordion */}
         <div className="space-y-4">
           {filteredDepartments.map((dept) => (
-            <div 
-              key={dept.id} 
+            <div
+              key={dept.id}
               className="bg-spotify-dark rounded-spotify-card border border-spotify-border shadow-spotify-medium overflow-hidden reveal"
             >
               {/* Department Header */}
@@ -130,7 +185,7 @@ const CoursesPage = () => {
                 <div className="border-t border-spotify-border p-4 md:p-6 animate-fadeIn">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {dept.courses.map((course) => (
-                      <div 
+                      <div
                         key={course.id}
                         className="bg-spotify-mid/50 rounded-spotify p-4 border border-spotify-border hover:border-spotify-green/50 transition group card-hover"
                       >
@@ -142,7 +197,7 @@ const CoursesPage = () => {
                             {course.code}
                           </span>
                         </div>
-                        
+
                         <p className="text-spotify-silver text-xs md:text-sm font-spotify mb-3">
                           {course.description}
                         </p>
@@ -164,9 +219,9 @@ const CoursesPage = () => {
 
                         <button
                           onClick={() => handleAdmission(course)}
-                          className="w-full bg-spotify-green text-black font-bold text-sm py-2 rounded-full hover:bg-spotify-green-dark transition flex items-center justify-center gap-2 group/btn"
+                          className="w-full bg-gradient-to-b from-spotify-green to-green-600 text-black font-extrabold text-sm py-2 rounded-full flex items-center justify-center gap-2 group/btn border-b-4 border-green-800 shadow-[0_4px_15px_rgba(29,185,84,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(29,185,84,0.6)] active:translate-y-0 active:border-b-0 transition-all duration-200"
                         >
-                          <FaGraduationCap size={14} />
+                          <FaGraduationCap size={16} className="group-hover/btn:scale-110 transition-transform" />
                           Apply for Admission
                           <FaExternalLinkAlt size={12} className="opacity-0 group-hover/btn:opacity-100 transition" />
                         </button>
@@ -188,13 +243,6 @@ const CoursesPage = () => {
 
         {/* Admission Section */}
         <div id="admission-section" className="mt-16 border-t border-spotify-border pt-8">
-          <h2 className="font-spotify-title text-2xl md:text-3xl font-bold text-white text-center mb-2">
-            <span className="text-spotify-green">Apply</span> for Admission
-          </h2>
-          <p className="text-spotify-silver text-center text-sm mb-8">
-            Fill out the form below to apply for your desired course
-          </p>
-
           {selectedCourse ? (
             <div className="bg-spotify-dark rounded-spotify-card p-6 md:p-8 border border-spotify-green/30 shadow-spotify-medium animate-slideUp">
               <div className="flex items-center justify-between mb-4">
@@ -205,7 +253,7 @@ const CoursesPage = () => {
                   {selectedCourse.code}
                 </span>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-spotify-mid/30 rounded-spotify p-3 text-center">
                   <p className="text-spotify-silver text-xs uppercase tracking-wider">Duration</p>
@@ -226,25 +274,74 @@ const CoursesPage = () => {
                   <span className="text-spotify-green font-bold">📝</span> To apply for this course, please contact our admission office:
                 </p>
                 <div className="flex flex-col md:flex-row gap-4">
-                  <a 
-                    href="tel:9687265333" 
+                  <a
+                    href="tel:9479719159"
                     className="flex-1 bg-spotify-green text-black font-bold py-3 rounded-full text-center hover:bg-spotify-green-dark transition flex items-center justify-center gap-2 animate-pulse"
                   >
-                    📞 Call Now: 9687265333
+                    📞 Call Now: 9479719159
                   </a>
-                  <a 
-                    href="mailto:skps.org@gmail.com" 
+                  <a
+                    href="mailto:skps.org@gmail.com"
                     className="flex-1 bg-spotify-mid text-white font-bold py-3 rounded-full text-center hover:bg-spotify-mid/80 transition flex items-center justify-center gap-2"
                   >
-                    ✉️ Emai l: skps.org@gmail.com
+                    ✉️ Email: skps.org@gmail.com
                   </a>
-                  <a 
-                    href="https://wa.me/919687265333" 
+
+                  <a
+                    href="https://wa.me/919479719159"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 bg-green-600 text-white font-bold py-3 rounded-full text-center hover:bg-green-700 transition flex items-center justify-center gap-2"
                   >
                     💬 WhatsApp
                   </a>
                 </div>
+
+                {/* ✨ Star Border Animated Button */}
+                <div className="mt-6 flex justify-center">
+                  <a
+                    href="https://shaheedbhagatsinghhealthandeducation.com/student-register"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-block"
+                  >
+                    {/* Star Border Container */}
+                    <div className="absolute -inset-[3px] rounded-2xl overflow-hidden">
+                      {/* Rotating Star Border */}
+                      <div className="star-border-rotate absolute inset-0"></div>
+                    </div>
+
+                    {/* Button Body */}
+                    <div className="relative bg-spotify-black px-8 py-4 rounded-2xl overflow-hidden">
+                      {/* Hover Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-spotify-green/0 via-spotify-green/20 to-spotify-green/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+
+                      {/* Stars Background on Hover */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span className="absolute top-1 left-3 text-yellow-400 text-xs animate-spin" style={{ animationDuration: '3s' }}>✦</span>
+                        <span className="absolute top-2 right-4 text-yellow-300 text-[10px] animate-spin" style={{ animationDuration: '4s', animationDirection: 'reverse' }}>✧</span>
+                        <span className="absolute bottom-1 left-6 text-yellow-400 text-xs animate-spin" style={{ animationDuration: '2.5s' }}>✦</span>
+                        <span className="absolute bottom-2 right-8 text-yellow-300 text-[10px] animate-spin" style={{ animationDuration: '3.5s', animationDirection: 'reverse' }}>✧</span>
+                      </div>
+
+                      {/* Button Text */}
+                      <span className="relative flex items-center gap-3 text-white font-bold text-sm md:text-base whitespace-nowrap">
+                        <span className="text-lg group-hover:animate-bounce" style={{ animationDelay: '0s' }}>⭐</span>
+                        <span>Apply Now</span>
+                        <span className="text-lg group-hover:animate-bounce" style={{ animationDelay: '0.15s' }}>⭐</span>
+                        <svg
+                          className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
+
                 <p className="text-spotify-silver text-xs text-center mt-4">
                   Or visit our campus at: Noida, Uttar Pradesh, India
                 </p>
@@ -271,4 +368,4 @@ const CoursesPage = () => {
   );
 };
 
-export default CoursesPage;
+export default CoursesPage; 

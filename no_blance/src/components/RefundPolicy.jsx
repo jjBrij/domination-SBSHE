@@ -5,16 +5,52 @@ import { FaArrowLeft, FaSearch, FaHeart, FaShoppingBag } from 'react-icons/fa';
 
 const RefundPolicy = () => {
   useEffect(() => {
+    // Scroll to top on page load
     window.scrollTo(0, 0);
+    
+    // Force content to show on mount
+    const timer = setTimeout(() => {
+      // Manually trigger reveal animations
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Set up Intersection Observer for scroll reveals
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="bg-spotify-black min-h-screen font-spotify">
       {/* Utility Bar - Spotify Style */}
       
+
       {/* Navigation Bar - Spotify Style */}
       <div className="bg-spotify-black/95 backdrop-blur border-b border-spotify-border sticky top-0 z-10">
-        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+         
+          
+          {/* Right side - Spotify style icons */}
+          <div className="flex items-center gap-4">
+            
+          </div>
+        </div>
       </div>
 
       {/* Refund Policy Content - Spotify Style */}
@@ -22,8 +58,8 @@ const RefundPolicy = () => {
         {/* Header - Spotify Display Style */}
         <div className="border-b border-spotify-border pb-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-0.1 h-11 bg-spotify-green rounded-full"></div>
-       
+            <div className="w-0.18 bg-spotify-green rounded-full"></div>
+           
           </div>
           <h1 className="font-spotify-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[0.9] tracking-tight">
             Refund
@@ -33,8 +69,7 @@ const RefundPolicy = () => {
           <div className="mt-6 flex flex-wrap gap-4 text-xs text-spotify-silver font-spotify">
             <span className="flex items-center gap-2 bg-spotify-mid px-3 py-1.5 rounded-full border border-spotify-border">
               <span className="w-1.5 h-1.5 bg-spotify-green rounded-full"></span>
-              PATEL College of Professional
-Education & Technology Pvt. Ltd.
+              PATEL College of Professional Education & Information Technology.
             </span>
             <span className="flex items-center gap-2 bg-spotify-mid px-3 py-1.5 rounded-full border border-spotify-border">
               <span className="w-1.5 h-1.5 bg-spotify-green rounded-full"></span>
@@ -59,8 +94,7 @@ Education & Technology Pvt. Ltd.
               Introduction
             </h2>
             <p className="text-spotify-silver text-sm md:text-base leading-relaxed font-spotify">
-              This Refund Policy outlines the terms and conditions for refunds related to courses, programs, and services offered by PATEL College of Professional
-Education & Technology Pvt. Ltd. through its Learning Management System (LMS). By purchasing or enrolling in any course or service, you agree to this Refund Policy.
+              This Refund Policy outlines the terms and conditions for refunds related to courses, programs, and services offered by PATEL College of Professional Education & Information Technology. through its Learning Management System (LMS). By purchasing or enrolling in any course or service, you agree to this Refund Policy.
             </p>
           </section>
 
@@ -271,8 +305,7 @@ Education & Technology Pvt. Ltd. through its Learning Management System (LMS). B
               Organization Rights
             </h2>
             <p className="text-spotify-silver text-sm font-spotify mb-3">
-              PATEL College of Professional
-Education & Technology Pvt. Ltd. reserves the right to:
+              PATEL College of Professional Education & Information Technology. reserves the right to:
             </p>
             <ul className="space-y-2 text-spotify-silver text-sm font-spotify">
               <li className="flex items-center gap-2 bg-spotify-mid/30 p-3 rounded-spotify border border-spotify-border">
@@ -300,8 +333,7 @@ Education & Technology Pvt. Ltd. reserves the right to:
               <div className="space-y-3 text-spotify-silver font-spotify">
                 <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <span className="text-spotify-green font-bold min-w-[140px]">Organization Name:</span>
-                  <span>PATEL College of Professional
-Education & Technology Pvt. Ltd.</span>
+                  <span>PATEL College of Professional Education & Information Technology.</span>
                 </p>
                 <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <span className="text-spotify-green font-bold min-w-[140px]">Email:</span>
@@ -333,8 +365,7 @@ Education & Technology Pvt. Ltd.</span>
             </p>
             <div className="bg-spotify-green/10 border border-spotify-green/30 rounded-spotify p-4 md:p-6">
               <p className="text-spotify-green text-sm md:text-base italic font-spotify text-center">
-                "PATEL College of Professional
-Education & Technology Pvt. Ltd. — Transparent Refund Policy for all course purchases."
+                "PATEL College of Professional Education & Information Technology. — Transparent Refund Policy for all course purchases."
               </p>
             </div>
           </section>
@@ -344,7 +375,7 @@ Education & Technology Pvt. Ltd. — Transparent Refund Policy for all course pu
         <div className="border-t border-spotify-border mt-8 md:mt-12 pt-8 text-center">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="btn-spotify-green inline-flex items-center gap-2 px-8 py-3 text-sm"
+            className="bg-spotify-green text-black font-bold px-8 py-3 rounded-full hover:bg-spotify-green-dark transition inline-flex items-center gap-2 text-sm uppercase tracking-button"
           >
             Back to Top ↑
           </button>

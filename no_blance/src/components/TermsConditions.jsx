@@ -5,13 +5,41 @@ import { FaArrowLeft, FaSearch, FaHeart, FaShoppingBag } from 'react-icons/fa';
 
 const TermsConditions = () => {
   useEffect(() => {
+    // Scroll to top on page load
     window.scrollTo(0, 0);
+    
+    // Force content to show on mount
+    const timer = setTimeout(() => {
+      // Manually trigger reveal animations
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Set up Intersection Observer for scroll reveals
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="bg-spotify-black min-h-screen font-spotify">
       {/* Utility Bar - Spotify Style */}
-      
+     
 
       {/* Navigation Bar - Spotify Style */}
       <div className="bg-spotify-black/95 backdrop-blur border-b border-spotify-border sticky top-0 z-10">
@@ -19,7 +47,7 @@ const TermsConditions = () => {
           
           {/* Right side - Spotify style icons */}
           <div className="flex items-center gap-4">
-
+           
           </div>
         </div>
       </div>
@@ -29,8 +57,8 @@ const TermsConditions = () => {
         {/* Header - Spotify Display Style */}
         <div className="border-b border-spotify-border pb-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-0.1 h-8 bg-spotify-green rounded-full"></div>
-           
+            <div className="w-0.1-8 bg-spotify-green rounded-full"></div>
+          
           </div>
           <h1 className="font-spotify-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[0.9] tracking-tight">
             Terms
@@ -40,8 +68,7 @@ const TermsConditions = () => {
           <div className="mt-6 flex flex-wrap gap-4 text-xs text-spotify-silver font-spotify">
             <span className="flex items-center gap-2 bg-spotify-mid px-3 py-1.5 rounded-full border border-spotify-border">
               <span className="w-1.5 h-1.5 bg-spotify-green rounded-full"></span>
-              PATEL College of Professional
-Education & Technology Pvt. Ltd.
+              PATEL College of Professional Education & Information Technology.
             </span>
             <span className="flex items-center gap-2 bg-spotify-mid px-3 py-1.5 rounded-full border border-spotify-border">
               <span className="w-1.5 h-1.5 bg-spotify-green rounded-full"></span>
@@ -66,8 +93,7 @@ Education & Technology Pvt. Ltd.
               Introduction
             </h2>
             <p className="text-spotify-silver text-sm md:text-base leading-relaxed font-spotify">
-              Welcome to PATEL College of Professional
-Education & Technology Pvt. Ltd.. These Terms and Conditions govern your use of our Learning Management System (LMS) platform, website, services, and educational content. By accessing or using our platform, you agree to comply with and be bound by these Terms & Conditions. If you do not agree, please do not use our services.
+              Welcome to PATEL College of Professional Education & Information Technology. These Terms and Conditions govern your use of our Learning Management System (LMS) platform, website, services, and educational content. By accessing or using our platform, you agree to comply with and be bound by these Terms & Conditions. If you do not agree, please do not use our services.
             </p>
           </section>
 
@@ -83,8 +109,7 @@ Education & Technology Pvt. Ltd.. These Terms and Conditions govern your use of 
             <ul className="space-y-3 text-spotify-silver text-sm font-spotify">
               <li className="flex items-start gap-3 bg-spotify-mid/30 p-3 rounded-spotify border border-spotify-border">
                 <span className="text-spotify-green font-bold min-w-[80px]">Platform</span>
-                <span>Refers to PATEL College of Professional
-Education & Technology Pvt. Ltd. website and services</span>
+                <span>Refers to PATEL College of Professional Education & Information Technology. website and services</span>
               </li>
               <li className="flex items-start gap-3 bg-spotify-mid/30 p-3 rounded-spotify border border-spotify-border">
                 <span className="text-spotify-green font-bold min-w-[80px]">User</span>
@@ -96,8 +121,7 @@ Education & Technology Pvt. Ltd. website and services</span>
               </li>
               <li className="flex items-start gap-3 bg-spotify-mid/30 p-3 rounded-spotify border border-spotify-border">
                 <span className="text-spotify-green font-bold min-w-[80px]">Organization</span>
-                <span>Refers to PATEL College of Professional
-Education & Technology Pvt. Ltd.</span>
+                <span>Refers to PATEL College of Professional Education & Information Technology.</span>
               </li>
             </ul>
           </section>
@@ -316,8 +340,7 @@ Education & Technology Pvt. Ltd.</span>
             </ul>
             <div className="bg-spotify-mid/30 rounded-spotify p-4 border border-spotify-border">
               <p className="text-spotify-silver text-sm font-spotify">
-                Are property of PATEL College of Professional
-Education & Technology Pvt. Ltd.. Users may not reproduce, distribute, or copy content without written permission.
+                Are property of PATEL College of Professional Education & Information Technology. Users may not reproduce, distribute, or copy content without written permission.
               </p>
             </div>
           </section>
@@ -332,8 +355,7 @@ Education & Technology Pvt. Ltd.. Users may not reproduce, distribute, or copy c
               Limitation of Liability
             </h2>
             <p className="text-spotify-silver text-sm font-spotify mb-3">
-              PATEL College of Professional
-Education & Technology Pvt. Ltd. is not responsible for:
+              PATEL College of Professional Education & Information Technology. is not responsible for:
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-spotify-silver text-sm font-spotify mb-4">
               <li className="flex items-center gap-2 bg-spotify-mid/30 p-3 rounded-spotify border border-spotify-border">
@@ -459,8 +481,7 @@ Education & Technology Pvt. Ltd. is not responsible for:
               <div className="space-y-3 text-spotify-silver font-spotify">
                 <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <span className="text-spotify-green font-bold min-w-[140px]">Organization Name:</span>
-                  <span>PATEL College of Professional
-Education & Technology Pvt. Ltd.</span>
+                  <span>PATEL College of Professional Education & Information Technology.</span>
                 </p>
                 <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <span className="text-spotify-green font-bold min-w-[140px]">Email:</span>
@@ -492,8 +513,7 @@ Education & Technology Pvt. Ltd.</span>
             </p>
             <div className="bg-spotify-green/10 border border-spotify-green/30 rounded-spotify p-4 md:p-6">
               <p className="text-spotify-green text-sm md:text-base italic font-spotify text-center">
-                "PATEL College of Professional
-Education & Technology Pvt. Ltd. — Learning Management System. Read our terms carefully before using our services."
+                "PATEL College of Professional Education & Information Technology. — Learning Management System. Read our terms carefully before using our services."
               </p>
             </div>
           </section>
@@ -503,7 +523,7 @@ Education & Technology Pvt. Ltd. — Learning Management System. Read our terms 
         <div className="border-t border-spotify-border mt-8 md:mt-12 pt-8 text-center">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="btn-spotify-green inline-flex items-center gap-2 px-8 py-3 text-sm"
+            className="bg-spotify-green text-black font-bold px-8 py-3 rounded-full hover:bg-spotify-green-dark transition inline-flex items-center gap-2 text-sm uppercase tracking-button"
           >
             Back to Top ↑
           </button>

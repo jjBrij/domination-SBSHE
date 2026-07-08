@@ -158,7 +158,7 @@ const VideoPopup = () => {
         {/* Video Info */}
         <div className="bg-spotify-dark p-4 md:p-5 border-t border-spotify-border">
           <h3 className="text-white font-spotify-title text-base md:text-lg font-bold">
-           PATEL college of professional Education & Technology pvt LtdAcademy
+           PATEL college of professional Education & Information TechnologyAcademy
           </h3>
           <p className="text-spotify-silver text-xs md:text-sm font-spotify mt-1">
             Discover our vision, mission, and commitment to quality education

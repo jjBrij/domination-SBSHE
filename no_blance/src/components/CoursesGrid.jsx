@@ -6,8 +6,8 @@ const CoursesGrid = () => {
     { icon: "💻", title: "IT & Software", desc: "Web Designing, Advanced Excel, Diploma in Information Technology (DIT) & more", color: "bg-spotify-green/10" },
     { icon: "🌾", title: "Agriculture Sciences", desc: " Diploma in Agriculture, Organic Farming Certification, Agri-Business Management", color: "bg-spotify-green/10" },
     { icon: "🏥", title: "Para-medical", desc: "Operation Theatre Technician (OTT),Ultrasound Technician,Emergency Medical Technician", color: "bg-spotify-green/10" },
-   
-  
+
+
     { icon: "🏛️", title: "Yoga & Naturopathy", desc: "Diploma in Naturopathy & Yogic Sciences (DNYS)", color: "bg-spotify-green/10" }
   ];
 
@@ -28,19 +28,41 @@ const CoursesGrid = () => {
               </div>
               <h3 className="text-lg font-spotify-title font-bold text-white">{d.title}</h3>
               <p className="text-spotify-silver text-sm font-spotify mt-2">{d.desc}</p>
-              <a href="#" className="text-spotify-green text-sm font-bold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-button">
+              <a href="http://localhost:3000/courses" className="text-spotify-green text-sm font-bold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-button">
                 Know More →
               </a>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <a href="https://shaheedbhagatsinghhealthandeducation.com/student-register">
-              
-          <button className="bg-spotify-green text-black font-bold px-10 py-3 rounded-full hover:bg-spotify-green-dark transition shadow-lg uppercase tracking-button">
-            Apply Now
-          </button>
-           </a>
+        <div className="mt-6 flex justify-center">
+          <a
+            href="https://shaheedbhagatsinghhealthandeducation.com/student-register"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block p-[2px] rounded-full"
+            style={{
+              background: 'conic-gradient(from 0deg, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent)',
+              animation: 'wobble 3s ease-in-out infinite',
+            }}
+          >
+            {/* Corner Stars */}
+            <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite' }}>⭐</span>
+            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 0.75s' }}>⭐</span>
+            <span className="absolute top-1/2 -left-2 -translate-y-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 0.5s' }}>✦</span>
+            <span className="absolute top-1/2 -right-2 -translate-y-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 1s' }}>✦</span>
+
+            {/* Button */}
+            <div className="relative bg-spotify-green text-black font-extrabold text-sm md:text-base px-6 py-3 rounded-full shadow-[0_0_25px_rgba(29,185,84,0.6)] hover:scale-110 transition-transform duration-300 overflow-hidden cursor-pointer">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+              ></div>
+              <span className="relative flex items-center gap-2 whitespace-nowrap">
+                <span className="text-base group-hover:animate-bounce">⭐</span>
+                <span>Apply Now</span>
+                <span className="text-base group-hover:animate-bounce" style={{ animationDelay: '0.15s' }}>⭐</span>
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>

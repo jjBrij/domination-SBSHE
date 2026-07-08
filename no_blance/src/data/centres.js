@@ -3,7 +3,7 @@ export const centresData = {
   "Maharashtra": [
     {
       city: "Mumbai",
-      name: "PATEL college of professional Education & Technology pvt LtdAcademy - Mumbai Central",
+      name: "PATEL college of professional Education & Information TechnologyAcademy - Mumbai Central",
       address: "42, Linking Road, Bandra West, Mumbai - 400050",
       phone: "+91 22 1234 5678",
       timing: "9:00 AM - 8:00 PM",
@@ -11,7 +11,7 @@ export const centresData = {
     },
     {
       city: "Pune",
-      name: "PATEL college of professional Education & Technology pvt LtdAcademy - Pune Camp",
+      name: "PATEL college of professional Education & Information TechnologyAcademy - Pune Camp",
       address: "127, MG Road, Camp Area, Pune - 411001",
       phone: "+91 20 2345 6789",
       timing: "9:00 AM - 7:00 PM",
@@ -21,7 +21,7 @@ export const centresData = {
   "Karnataka": [
     {
       city: "Bangalore",
-      name: "PATEL college of professional Education & Technology pvt LtdAcademy - Bangalore Tech Hub",
+      name: "PATEL college of professional Education & Information TechnologyAcademy - Bangalore Tech Hub",
       address: "3, Koramangala Industrial Layout, Bangalore - 560095",
       phone: "+91 80 3456 7890",
       timing: "8:30 AM - 8:30 PM",
@@ -31,7 +31,7 @@ export const centresData = {
   "Delhi": [
     {
       city: "Delhi",
-      name: "PATEL college of professional Education & Technology pvt LtdAcademy - Connaught Place",
+      name: "PATEL college of professional Education & Information TechnologyAcademy - Connaught Place",
       address: "15-B, Connaught Place, New Delhi - 110001",
       phone: "+91 11 4567 8901",
       timing: "9:00 AM - 9:00 PM",
@@ -39,7 +39,7 @@ export const centresData = {
     },
     {
       city: "Noida",
-      name: "PATEL college of professional Education & Technology pvt LtdAcademy - Noida Sec 62",
+      name: "PATEL college of professional Education & Information TechnologyAcademy - Noida Sec 62",
       address: "C-56, Sector 62, Noida - 201301",
       phone: "+91 120 5678 9012",
       timing: "9:00 AM - 7:30 PM",

@@ -31,7 +31,7 @@ const Footer = () => {
                 </h1>
 
                 <p className="text-yellow-400 text-sm font-medium">
-                  Education & Technology Pvt. Ltd.
+                  Education & Information Technology 
                 </p>
 
                 <a href="https://shaheedbhagatsinghhealthandeducation.com/site/">
@@ -45,13 +45,13 @@ const Footer = () => {
               India's leading multi-domain coaching institute for IT, Agriculture, and Para-medical fields.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="text-spotify-silver hover:text-spotify-green transition">
+              <a href="https://www.facebook.com/share/1RoHHj2QVV/" className="text-spotify-silver hover:text-spotify-green transition">
                 <FaFacebook size={20} />
               </a>
               <a href="#" className="text-spotify-silver hover:text-spotify-green transition">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-spotify-silver hover:text-spotify-green transition">
+              <a href="https://www.instagram.com/pcpeit?igsh=a3Zpb2V0dzkzM2Js">
                 <FaInstagram size={20} />
               </a>
               <a href="#" className="text-spotify-silver hover:text-spotify-green transition">
@@ -65,7 +65,7 @@ const Footer = () => {
           <div>
             <h5 className="text-white font-spotify-title font-bold text-sm uppercase tracking-button">Quick Links</h5>
             <ul className="text-spotify-silver text-sm space-y-2 mt-4 font-spotify">
-              <li><a href="#" className="hover:text-white transition">Courses</a></li>
+              <li><Link to="/courses" className="hover:text-spotify-green transition">Courses</Link></li>
               <li><Link to="/about" className="hover:text-spotify-green transition">About Us</Link></li>
               <li><a href="#" className="hover:text-white transition">Contact</a></li>
               <li><a href="https://shaheedbhagatsinghhealthandeducation.com/site/contactus.html" className="hover:text-white transition">Support</a></li>
@@ -95,15 +95,15 @@ const Footer = () => {
           <div>
             <h5 className="text-white font-spotify-title font-bold text-sm uppercase tracking-button">Get In Touch</h5>
             <ul className="text-spotify-silver text-sm space-y-2 mt-4 font-spotify">
-              <li className="flex items-center gap-2">📞 +91 1800-123-4567</li>
-              <li className="flex items-center gap-2">📧 info@PATEL college of professional Education & Technology pvt Ltdacademy.in</li>
-              <li className="flex items-center gap-2">📍 5+ centres across India</li>
+              <li className="flex items-center gap-2">📞 +91 9479719159</li>
+              <li className="flex items-center gap-2">📧 patelcollegeprofesnaledution@gmail.com</li>
+              <li className="flex items-center gap-2">📍Abhinav colony, devaldi Road, near Parshuram Chowk , Sai Mandir, Main road , new Harsud,450116 </li>
             </ul>
           </div>
         </div>
         <div className="border-t border-spotify-border mt-8 pt-6 text-center">
           <p className="text-spotify-silver text-xs font-bold uppercase tracking-wider">
-            © 2026 PATEL college of professional Education & Technology pvt LtdAcademy. All rights reserved. | NSDC Certified · Govt. Recognized · Since 2005
+            © 2026 PATEL college of professional Education & Information TechnologyAcademy. All rights reserved. | NSDC Certified · Govt. Recognized · Since 2005
           </p>
         </div>
       </div>

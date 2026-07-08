@@ -9,109 +9,109 @@ export const departments = [
       {
         id: 'ott',
         name: 'Operation Theatre Technician (OTT)',
-        code: 'PM-OTT-101',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹25,000',
+        code: 'PMDNCT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Training in operation theatre procedures and equipment handling'
       },
       {
         id: 'emt',
         name: 'Emergency Medical Technician (EMT)',
-        code: 'PM-EMT-102',
-        duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹15,000',
+        code: 'PMEMT',
+        duration: '12 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹30,000',
         description: 'Emergency response and pre-hospital care training'
       },
       {
         id: 'cms-ed',
         name: 'Community Medical Services & Essential Drugs (CMS & ED)',
-        code: 'PM-CMS-103',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹22,000',
+        code: 'PMDCE',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Community healthcare and essential drug management'
       },
       {
         id: 'cssd',
         name: 'Central Sterile Services Department Technician (CSSD Technician)',
-        code: 'PM-CSSD-104',
-        duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹18,000',
+        code: 'PMDCT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Sterilization and infection control procedures'
       },
       {
         id: 'first-aid',
         name: 'First Aid & Emergency Care',
-        code: 'PM-FA-105',
-        duration: '3 Months',
-        eligibility: '10th Pass',
-        fee: '₹8,000',
+        code: 'PMCFA',
+        duration: '1 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹5,000',
         description: 'Basic first aid and emergency response training'
       },
       {
         id: 'ct-scan',
         name: 'CT Scan Technician',
-        code: 'PM-CT-106',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹28,000',
+        code: 'PMDCST',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'CT scan equipment operation and patient care'
       },
       {
         id: 'x-ray',
         name: 'X-Ray Technician (Radiography Technician)',
-        code: 'PM-XR-107',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹26,000',
+        code: 'PMDXRT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Radiography imaging and safety procedures'
       },
       {
         id: 'ultrasound',
         name: 'Ultrasound Technician',
-        code: 'PM-US-108',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹30,000',
+        code: 'PMDUT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Ultrasound imaging techniques and patient care'
       },
       {
         id: 'mlt',
         name: 'Medical Laboratory Technician (MLT)',
-        code: 'PM-MLT-109',
+        code: 'PMDMLT2',
         duration: '12 Months',
-        eligibility: '10+2 (Science)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹24,000',
         description: 'Clinical laboratory testing and diagnostics'
       },
       {
         id: 'dialysis',
         name: 'Dialysis Technician',
-        code: 'PM-DT-110',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
+        code: 'PMDDT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹27,000',
         description: 'Dialysis equipment operation and patient monitoring'
       },
       {
         id: 'ecg',
         name: 'ECG Technician',
-        code: 'PM-ECG-111',
-        duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹16,000',
+        code: 'PMECG',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'ECG machine operation and cardiac monitoring'
       },
       {
         id: 'cath-lab',
         name: 'Cath Lab Technician',
-        code: 'PM-CL-112',
-        duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹32,000',
+        code: 'PMDCLT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹40,000',
         description: 'Cardiac catheterization lab procedures'
       }
     ]
@@ -125,19 +125,19 @@ export const departments = [
       {
         id: 'dcs',
         name: 'Diploma in Computer Science',
-        code: 'IT-DCS-201',
+        code: 'ITDCA',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹20,000',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹10,000',
         description: 'Fundamental computer science concepts and programming'
       },
       {
         id: 'adcs',
         name: 'Advanced Diploma in Computer Science',
-        code: 'IT-ADCS-202',
-        duration: '18 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹28,000',
+        code: 'ITADCA',
+        duration: '12 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹12,000',
         description: 'Advanced programming and software development'
       },
       {
@@ -145,7 +145,7 @@ export const departments = [
         name: 'Diploma in Information Technology (DIT)',
         code: 'IT-DIT-203',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹20,000',
         description: 'Information technology and system administration'
       },
@@ -154,7 +154,7 @@ export const departments = [
         name: 'Advanced Diploma in Information Technology (ADIT)',
         code: 'IT-ADIT-204',
         duration: '18 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹28,000',
         description: 'Advanced IT infrastructure and management'
       },
@@ -163,7 +163,7 @@ export const departments = [
         name: 'Certificate in Computer Applications (CCA)',
         code: 'IT-CCA-205',
         duration: '3 Months',
-        eligibility: '10th Pass',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹5,000',
         description: 'Basic computer applications and office tools'
       },
@@ -172,7 +172,7 @@ export const departments = [
         name: 'Diploma in Computer Applications (DCA)',
         code: 'IT-DCA-206',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹10,000',
         description: 'Computer applications and software usage'
       },
@@ -181,7 +181,7 @@ export const departments = [
         name: 'Advanced Diploma in Computer Applications (ADCA)',
         code: 'IT-ADCA-207',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹18,000',
         description: 'Advanced computer applications and programming'
       },
@@ -199,7 +199,7 @@ export const departments = [
         name: 'Computer Teacher Training (CTT)',
         code: 'IT-CTT-209',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹12,000',
         description: 'Training to become a computer teacher'
       },
@@ -217,7 +217,7 @@ export const departments = [
         name: 'Advanced Excel',
         code: 'IT-EXCEL-211',
         duration: '2 Months',
-        eligibility: '10th Pass',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹5,000',
         description: 'Advanced Excel formulas and data analysis'
       },
@@ -226,7 +226,7 @@ export const departments = [
         name: 'Office Automation',
         code: 'IT-OA-212',
         duration: '3 Months',
-        eligibility: '10th Pass',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹6,000',
         description: 'MS Office and office management tools'
       },
@@ -235,7 +235,7 @@ export const departments = [
         name: 'Web Designing',
         code: 'IT-WD-213',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹15,000',
         description: 'HTML, CSS, JavaScript and responsive design'
       },
@@ -244,7 +244,7 @@ export const departments = [
         name: 'Graphic Designing',
         code: 'IT-GD-214',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹15,000',
         description: 'Adobe Photoshop, Illustrator and design principles'
       },
@@ -253,7 +253,7 @@ export const departments = [
         name: 'Digital Marketing',
         code: 'IT-DM-215',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹18,000',
         description: 'SEO, SEM, social media and digital marketing strategies'
       },
@@ -262,7 +262,7 @@ export const departments = [
         name: 'Programming (C, C++, Java, Python)',
         code: 'IT-PROG-216',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹22,000',
         description: 'Comprehensive programming in C, C++, Java and Python'
       },
@@ -271,7 +271,7 @@ export const departments = [
         name: 'AutoCAD',
         code: 'IT-CAD-217',
         duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹14,000',
         description: 'AutoCAD 2D and 3D design and drafting'
       },
@@ -280,7 +280,7 @@ export const departments = [
         name: 'Data Entry Operator (DEO)',
         code: 'IT-DEO-218',
         duration: '3 Months',
-        eligibility: '10th Pass',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹4,000',
         description: 'Data entry, typing and office management'
       }
@@ -297,7 +297,7 @@ export const departments = [
         name: 'Diploma in Naturopathy & Yogic Sciences (DNYS)',
         code: 'YN-DNYS-301',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹20,000',
         description: 'Naturopathy, yoga therapy and holistic healing'
       }
@@ -312,37 +312,37 @@ export const departments = [
       {
         id: 'ntt',
         name: 'Nursery Teacher Training (NTT)',
-        code: 'ED-NTT-401',
+        code: 'EDUCNTT',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹18,000',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹30,000',
         description: 'Nursery level teaching methodology and child psychology'
       },
       {
         id: 'nptt',
         name: 'Nursery Primary Teacher Training (NPTT)',
-        code: 'ED-NPTT-402',
+        code: 'EDUCPTT',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹18,000',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹30,000',
         description: 'Primary and nursery level teacher training'
       },
       {
         id: 'ctt-ed',
         name: 'Computer Teacher Training (CTT)',
-        code: 'ED-CTT-403',
-        duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹12,000',
+        code: 'EDUDCT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹30,000',
         description: 'Computer teaching methodology and classroom management'
       },
       {
         id: 'ytt',
         name: 'Yoga Teacher Training (YTT)',
-        code: 'ED-YTT-404',
-        duration: '6 Months',
-        eligibility: '10+2 (Any Stream)',
-        fee: '₹14,000',
+        code: 'EDUDYTT',
+        duration: '24 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹30,000',
         description: 'Yoga teaching methodology and practice'
       }
     ]
@@ -356,27 +356,27 @@ export const departments = [
       {
         id: 'diploma-agri',
         name: 'Diploma in Agriculture',
-        code: 'AG-DA-501',
+        code: 'AGRDA',
         duration: '12 Months',
-        eligibility: '10+2 (Science)',
-        fee: '₹20,000',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹25,000',
         description: 'Modern agriculture techniques and farm management'
       },
       {
         id: 'organic-farming',
         name: 'Organic Farming Certification',
-        code: 'AG-OF-502',
-        duration: '6 Months',
-        eligibility: '10th Pass',
-        fee: '₹12,000',
+        code: 'AGRCOF',
+        duration: '12 Months',
+        eligibility: '10th /10+2th / Graduation',
+        fee: '₹25,000',
         description: 'Organic farming methods and certification'
       },
       {
         id: 'modern-farming',
         name: 'Modern Farming Techniques',
-        code: 'AG-MF-503',
+        code: 'AG-MF',
         duration: '6 Months',
-        eligibility: '10th Pass',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹14,000',
         description: 'Modern farming equipment and technology'
       },
@@ -385,7 +385,7 @@ export const departments = [
         name: 'Agri-Business Management',
         code: 'AG-ABM-504',
         duration: '12 Months',
-        eligibility: '10+2 (Any Stream)',
+        eligibility: '10th /10+2th / Graduation',
         fee: '₹22,000',
         description: 'Agricultural business management and marketing'
       }

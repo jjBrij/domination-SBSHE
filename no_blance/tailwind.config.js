@@ -55,6 +55,26 @@ module.exports = {
         'button-wide': '2px',
       },
     },
+    animations: {
+     'spin-border': 'spin-border 4s linear infinite',
+        'star-pulse': 'star-pulse 1.5s ease-in-out infinite',
+      },
+      keyframes: {
+        'spin-border': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'star-pulse': {
+          '0%, 100%': { 
+            opacity: '0.5',
+            transform: 'translateX(-50%) scale(0.8)' 
+          },
+          '50%': { 
+            opacity: '1',
+            transform: 'translateX(-50%) scale(1.2)' 
+          },
+        },
+      },
   },
   plugins: [],
 }

@@ -45,7 +45,6 @@ function App() {
         <Navbar />
         <Routes>
           {/* Home Page with all sections */}
-         
           <Route path="/" element={
             <>
               <Hero />
@@ -60,15 +59,16 @@ function App() {
             </>
           } />
           
-          {/* Gallery Page - Internal */}
+          {/* Other Pages */}
           <Route path="/gallery" element={<Gallery />} />
-           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-           <Route path="/terms-conditions" element={<TermsConditions />} />
-           <Route path="/refund-policy" element={<RefundPolicy />} />
-           <Route path="/about" element={<AboutUs />} />
-          <Route path="/courses" element={<CoursesGrid />} />
-          <Route path="/about" element={<FounderSection />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/about" element={<AboutUs />} />
+          
+          {/* Fixed Courses Route - Now points to the detailed CoursesPage */}
           <Route path="/courses" element={<CoursesPage />} />
+          
           <Route path="/contact" element={<div className="min-h-screen flex items-center justify-center text-white">Contact Page</div>} />
         </Routes>
         <Footer />

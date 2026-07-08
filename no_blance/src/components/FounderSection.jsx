@@ -12,7 +12,7 @@ const FounderSection = () => {
               {/* Image */}
               <img 
                 src={founderImage} 
-                alt="Founder - Dr. Vikram Singh" 
+                alt="Founder - Dr. Mukesh Patel" 
                 className="w-full h-full object-cover"
               />
               {/* Overlay gradient for text readability */}
@@ -33,8 +33,8 @@ const FounderSection = () => {
             "Empowering India's youth with future-ready skills across sectors. Our pedagogy blends theory with real-world practice, ensuring every student is industry-ready from day one."
           </p>
           <div className="border-l-4 border-spotify-green pl-4">
-            <p className="text-white font-spotify-title text-lg italic">— Dr. Vikram Singh</p>
-            <p className="text-spotify-silver text-sm font-spotify">PhD, IIT Delhi · 20+ years in education</p>
+            <p className="text-white font-spotify-title text-lg italic">— Dr.Mukesh Patel</p>
+            <p className="text-spotify-silver text-sm font-spotify">PhD  20+ years in education</p>
           </div>
        
         </div>

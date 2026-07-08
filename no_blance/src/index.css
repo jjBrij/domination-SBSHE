@@ -199,3 +199,101 @@
 .video-popup-content {
   animation: slideUp 0.4s ease-out forwards;
 }
+
+
+/* Star Border Animation */
+.star-border-rotate {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #facc15 5%,
+    transparent 10%,
+    transparent 20%,
+    #facc15 25%,
+    transparent 30%,
+    transparent 40%,
+    #facc15 45%,
+    transparent 50%,
+    transparent 60%,
+    #facc15 65%,
+    transparent 70%,
+    transparent 80%,
+    #facc15 85%,
+    transparent 90%
+  );
+  animation: spin-border 4s linear infinite;
+}
+
+@keyframes spin-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Star floating particles around button */
+.star-border-rotate::before,
+.star-border-rotate::after {
+  content: '⭐';
+  position: absolute;
+  font-size: 8px;
+  z-index: 10;
+  filter: drop-shadow(0 0 4px #facc15);
+}
+
+.star-border-rotate::before {
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: star-pulse 1.5s ease-in-out infinite;
+}
+
+.star-border-rotate::after {
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: star-pulse 1.5s ease-in-out infinite 0.75s;
+}
+
+@keyframes star-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+
+
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: translateX(+5%) scale(0.8); }
+  50% { opacity: 1; transform: translateX(+5%) scale(1.3); }
+}

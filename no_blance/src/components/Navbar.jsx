@@ -195,7 +195,7 @@ const Navbar = () => {
               </h1>
 
               <p className="text-yellow-400 text-sm font-medium">
-                Education & Technology Pvt. Ltd.
+                Education & Information Technology 
               </p>
               <a href="https://shaheedbhagatsinghhealthandeducation.com/site/">
                 <span className="mt-1 inline-block w-fit px-3 py-1 text-[10px] md:text-xs font-semibold rounded-full bg-gradient-to-r from-yellow-500 to-amber-300 text-black">
@@ -312,7 +312,7 @@ const Navbar = () => {
               <FaExternalLinkAlt size={10} className="opacity-50" />
             </a>
 
-            {/* Enroll Now CTA */}
+
             <a href="https://shaheedbhagatsinghhealthandeducation.com/student-register">
 
               <button className="hidden md:block bg-spotify-green text-black text-sm font-bold px-6 py-2 rounded-full hover:bg-spotify-green-dark transition shadow-lg uppercase tracking-button">

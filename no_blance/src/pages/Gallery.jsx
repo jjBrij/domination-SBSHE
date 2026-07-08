@@ -70,9 +70,7 @@ const Gallery = () => {
         {/* Header with Back Button */}
         <div className="flex flex-wrap items-center justify-between mb-8">
           <div>
-            <Link to="/" className="inline-flex items-center text-spotify-silver hover:text-white transition mb-2 md:mb-0">
-              <FaArrowLeft className="mr-2" /> Back to Home
-            </Link>
+            
             <h1 className="text-4xl font-spotify-title font-bold text-white mt-2">Gallery</h1>
             <p className="text-spotify-silver mt-1">Explore our campus life and events</p>
           </div>
