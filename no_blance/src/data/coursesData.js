@@ -143,35 +143,35 @@ export const departments = [
       {
         id: 'dit',
         name: 'Diploma in Information Technology (DIT)',
-        code: 'IT-DIT-203',
+        code: 'ITDIT',
         duration: '12 Months',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹20,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Information technology and system administration'
       },
       {
         id: 'adit',
         name: 'Advanced Diploma in Information Technology (ADIT)',
-        code: 'IT-ADIT-204',
-        duration: '18 Months',
+        code: 'ITADIT',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹28,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Advanced IT infrastructure and management'
       },
       {
         id: 'cca',
         name: 'Certificate in Computer Applications (CCA)',
-        code: 'IT-CCA-205',
-        duration: '3 Months',
+        code: 'ITCCA205',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹5,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Basic computer applications and office tools'
       },
       {
         id: 'dca',
         name: 'Diploma in Computer Applications (DCA)',
-        code: 'IT-DCA-206',
-        duration: '6 Months',
+        code: 'ITDCA',
+        duration: '12 Months',
         eligibility: '10th /10+2th / Graduation',
         fee: '₹10,000',
         description: 'Computer applications and software usage'
@@ -179,61 +179,61 @@ export const departments = [
       {
         id: 'adca',
         name: 'Advanced Diploma in Computer Applications (ADCA)',
-        code: 'IT-ADCA-207',
+        code: 'ITADCA',
         duration: '12 Months',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹18,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Advanced computer applications and programming'
       },
       {
         id: 'pgdca',
         name: 'Post Graduate Diploma in Computer Applications (PGDCA)',
-        code: 'IT-PGDCA-208',
-        duration: '12 Months',
+        code: 'ITPGDCA',
+        duration: 'N/A',
         eligibility: 'Graduation',
-        fee: '₹25,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Post graduate level computer applications'
       },
       {
         id: 'ctt',
         name: 'Computer Teacher Training (CTT)',
-        code: 'IT-CTT-209',
-        duration: '6 Months',
+        code: 'ITCTT',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹12,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Training to become a computer teacher'
       },
       {
         id: 'tally',
         name: 'Tally with GST',
-        code: 'IT-TALLY-210',
+        code: 'ITTALLY',
         duration: '3 Months',
-        eligibility: '10+2 (Commerce)',
-        fee: '₹8,000',
+        eligibility: '10th /10+2th / Graduation',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Tally accounting software with GST training'
       },
       {
         id: 'excel',
         name: 'Advanced Excel',
-        code: 'IT-EXCEL-211',
-        duration: '2 Months',
+        code: 'ITEXCEL',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹5,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Advanced Excel formulas and data analysis'
       },
       {
         id: 'office-auto',
         name: 'Office Automation',
-        code: 'IT-OA-212',
-        duration: '3 Months',
+        code: 'ITOA',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹6,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'MS Office and office management tools'
       },
       {
         id: 'web-design',
         name: 'Web Designing',
-        code: 'IT-WD-213',
+        code: 'ITWD',
         duration: '6 Months',
         eligibility: '10th /10+2th / Graduation',
         fee: '₹15,000',
@@ -242,46 +242,46 @@ export const departments = [
       {
         id: 'graphic-design',
         name: 'Graphic Designing',
-        code: 'IT-GD-214',
-        duration: '6 Months',
+        code: 'ITGD',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹15,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Adobe Photoshop, Illustrator and design principles'
       },
       {
         id: 'digital-marketing',
         name: 'Digital Marketing',
-        code: 'IT-DM-215',
-        duration: '6 Months',
+        code: 'ITDM',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹18,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'SEO, SEM, social media and digital marketing strategies'
       },
       {
         id: 'programming',
         name: 'Programming (C, C++, Java, Python)',
-        code: 'IT-PROG-216',
-        duration: '12 Months',
+        code: 'ITPROG',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹22,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Comprehensive programming in C, C++, Java and Python'
       },
       {
         id: 'autocad',
         name: 'AutoCAD',
-        code: 'IT-CAD-217',
-        duration: '6 Months',
+        code: 'ITAUTOCAD',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹14,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'AutoCAD 2D and 3D design and drafting'
       },
       {
         id: 'deo',
         name: 'Data Entry Operator (DEO)',
-        code: 'IT-DEO-218',
-        duration: '3 Months',
+        code: 'ITDEO',
+        duration: 'N/A',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹4,000',
+        fee: 'CONTACT TO INSTITUTE',
         description: 'Data entry, typing and office management'
       }
     ]
@@ -295,10 +295,10 @@ export const departments = [
       {
         id: 'dnys',
         name: 'Diploma in Naturopathy & Yogic Sciences (DNYS)',
-        code: 'YN-DNYS-301',
-        duration: '12 Months',
+        code: 'YNDNYS',
+        duration: '12/24 Months',
         eligibility: '10th /10+2th / Graduation',
-        fee: '₹20,000',
+        fee: '₹30,000,₹50,000',
         description: 'Naturopathy, yoga therapy and holistic healing'
       }
     ]
