@@ -97,36 +97,36 @@ const CoursesPage = () => {
           </div>
 
 
-         <div className="mt-6 flex justify-center">
-  <a
-    href="https://shaheedbhagatsinghhealthandeducation.com/student-register"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative inline-block p-[2px] rounded-full"
-    style={{
-      background: 'conic-gradient(from 0deg, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent)',
-      animation: 'wobble 3s ease-in-out infinite',
-    }}
-  >
-    {/* Corner Stars */}
-    <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite'}}>⭐</span>
-    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 0.75s'}}>⭐</span>
-    <span className="absolute top-1/2 -left-2 -translate-y-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 0.5s'}}>✦</span>
-    <span className="absolute top-1/2 -right-2 -translate-y-1/2 text-sm" style={{animation: 'pulse 1.5s ease-in-out infinite 1s'}}>✦</span>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://shaheedbhagatsinghhealthandeducation.com/student-register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-block p-[2px] rounded-full"
+              style={{
+                background: 'conic-gradient(from 0deg, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent, #1DB954, transparent)',
+                animation: 'wobble 3s ease-in-out infinite',
+              }}
+            >
+              {/* Corner Stars */}
+              <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite' }}>⭐</span>
+              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 0.75s' }}>⭐</span>
+              <span className="absolute top-1/2 -left-2 -translate-y-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 0.5s' }}>✦</span>
+              <span className="absolute top-1/2 -right-2 -translate-y-1/2 text-sm" style={{ animation: 'pulse 1.5s ease-in-out infinite 1s' }}>✦</span>
 
-    {/* Button */}
-    <div className="relative bg-spotify-green text-black font-extrabold text-sm md:text-base px-6 py-3 rounded-full shadow-[0_0_25px_rgba(29,185,84,0.6)] hover:scale-110 transition-transform duration-300 overflow-hidden cursor-pointer">
-      <div 
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
-      ></div>
-      <span className="relative flex items-center gap-2 whitespace-nowrap">
-        <span className="text-base group-hover:animate-bounce">⭐</span>
-        <span>Admission Open</span>
-        <span className="text-base group-hover:animate-bounce" style={{animationDelay: '0.5s'}}>⭐</span>
-      </span>
-    </div>
-  </a>
-</div>
+              {/* Button */}
+              <div className="relative bg-spotify-green text-black font-extrabold text-sm md:text-base px-6 py-3 rounded-full shadow-[0_0_25px_rgba(29,185,84,0.6)] hover:scale-110 transition-transform duration-300 overflow-hidden cursor-pointer">
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                ></div>
+                <span className="relative flex items-center gap-2 whitespace-nowrap">
+                  <span className="text-base group-hover:animate-bounce">⭐</span>
+                  <span>Admission Open</span>
+                  <span className="text-base group-hover:animate-bounce" style={{ animationDelay: '0.5s' }}>⭐</span>
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
 
         {/* Search Bar */}
@@ -281,10 +281,12 @@ const CoursesPage = () => {
                     📞 Call Now: 9479719159
                   </a>
                   <a
-                    href="mailto:skps.org@gmail.com"
-                    className="flex-1 bg-spotify-mid text-white font-bold py-3 rounded-full text-center hover:bg-spotify-mid/80 transition flex items-center justify-center gap-2"
+                    href="mailto:patelcollegeprofessionnaleducation@gmail.com"
+                    className="flex-1 bg-spotify-mid text-white font-bold py-3 rounded-full text-center hover:bg-spotify-mid/80 transition flex items-center justify-center gap-2 overflow-hidden"
                   >
-                    ✉️ Email: patelcollegeprofessionnaleducation@gmail.com
+                    <span className="truncate max-w-[200px] md:max-w-[300px]">
+                      ✉️ Email: patelcollegeprofessionnaleducation@gmail.com
+                    </span>
                   </a>
 
                   <a
@@ -343,7 +345,7 @@ const CoursesPage = () => {
                 </div>
 
                 <p className="text-spotify-silver text-xs text-center mt-4">
-                  Or visit our campus at: Noida, Uttar Pradesh, India
+                  Or visit our campus at:
                 </p>
               </div>
 

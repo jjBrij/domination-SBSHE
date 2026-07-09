@@ -44,16 +44,16 @@ const Gallery = () => {
   ];
 
   const images = [
-    { id: 1, category: 'campus', title: 'Campus View', src: img1, description: 'Beautiful campus overlooking the valley' },
-    { id: 2, category: 'students', title: 'Classroom Session', src: img2, description: 'Interactive classroom learning' },
-    { id: 3, category: 'events', title: 'Annual Day 2024', src: img3, description: 'Annual day celebration with students' },
-    { id: 4, category: 'workshops', title: 'Python Workshop', src: img4, description: 'Hands-on Python programming workshop' },
-    { id: 5, category: 'achievements', title: 'Award Ceremony', src: img5, description: 'Students receiving awards for excellence' },
-    { id: 6, category: 'campus', title: 'Library', src: img6, description: 'Well-stocked library with digital resources' },
-    { id: 7, category: 'students', title: 'Study Group', src: img7, description: 'Students collaborating on projects' },
-    { id: 8, category: 'events', title: 'Sports Day', src: img8, description: 'Annual sports day competition' },
-    { id: 9, category: 'workshops', title: 'Agriculture Lab', src: img9, description: 'Modern agriculture laboratory' },
-    { id: 10, category: 'achievements', title: 'Toppers 2024', src: img10, description: 'Top performers of the year' },
+    { id: 1, category: '', title: '', src: img1, description: 'Beautiful campus overlooking the valley' },
+    { id: 2, category: '', title: '', src: img2, description: 'Interactive classroom learning' },
+    { id: 3, category: '', title: 'Annual Day 2024', src: img3, description: 'Annual day celebration with students' },
+    { id: 4, category: '', title: '', src: img4, description: 'Hands-on Python programming workshop' },
+    { id: 5, category: '', title: '', src: img5, description: 'Students receiving awards for excellence' },
+    { id: 6, category: '', title: '', src: img6, description: 'Well-stocked library with digital resources' },
+    { id: 7, category: '', title: '', src: img7, description: 'Students collaborating on projects' },
+    { id: 8, category: '', title: '', src: img8, description: 'Annual sports day competition' },
+    { id: 9, category: '', title: '', src: img9, description: 'Modern agriculture laboratory' },
+    { id: 10, category: '', title: '', src: img10, description: 'Top performers of the year' },
   ];
 
   // Filter images based on category and search

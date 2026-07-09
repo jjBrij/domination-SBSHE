@@ -95,7 +95,7 @@ const Footer = () => {
           <div>
             <h5 className="text-white font-spotify-title font-bold text-sm uppercase tracking-button">Get In Touch</h5>
             <ul className="text-spotify-silver text-sm space-y-2 mt-4 font-spotify">
-              <li className="flex items-center gap-2">📞 +91 9479719159</li>
+              <li className="flex items-center gap-2">📞 +91 7049701759</li>
               <li className="flex items-center gap-2">📧 patelcollegeprofesnaledution@gmail.com</li>
               <li className="flex items-center gap-2">📍Abhinav colony, devaldi Road, near Parshuram Chowk , Sai Mandir, Main road , new Harsud,450116 </li>
             </ul>
