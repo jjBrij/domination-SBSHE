@@ -2,8 +2,8 @@
 import React from 'react';
 
 const StickyBottomBar = () => {
-  const phoneNumber = "+919479719159";
-  const formattedPhoneNumber = "9479719159";
+  const phoneNumber = "+9170479719159";
+  const formattedPhoneNumber = "70479719159";
   const handleCall = () => {
     const telLink = `tel:${phoneNumber}`;
     window.location.href = telLink;
